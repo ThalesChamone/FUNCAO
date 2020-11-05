@@ -1,17 +1,22 @@
 /*Escreva um procedimento chamado AUMENTO que receba dois valores
-reais X e Y como par‚metros e aumente o valor de X em Y%.*/
+reais X e Y como par√¢metros e aumente o valor de X em Y%.*/
 
 #include <stdio.h>
 
-void AUMENTO() {
-	float x, y, aumento;
+float AUMENTO(float x,float y) {
+	float aumento;
+	
+	aumento = x + ((y / 100)*x);
+
+	return aumento;
+	
+}
+int main() {
+	float x, y, resultado;
 	printf("Digite valores de X e Y: ");
 	scanf_s("%f %f", &x, &y);
 
-	aumento = x + y / 100;
+	resultado = AUMENTO(x, y);
 
-	printf("X com acrescimo = %.2f", aumento);
-}
-int main() {
-	AUMENTO();
+	printf("X com acrescimo = %.2f", resultado);
 }
